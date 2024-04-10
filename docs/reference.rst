@@ -466,8 +466,8 @@ hierarchical separator.
   Defaults to ``raw`` if none given.
 
 ``extra-mkfs-opts=<options>`` (optional)
-  Allows to specify custom filesystem options that will be passed to the slot's
-  ``mkfs.type`` call (ext4, vfat, and ubifs only).
+  Allows to specify custom filesystem creation options that will be passed to the slot's
+  ``mkfs.<type>`` call (ext4, vfat, and ubifs only).
 
 ``bootname=<name>`` (optional)
   Registers the slot for being handled by the

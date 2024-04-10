@@ -170,6 +170,7 @@ install-same=false\n";
 	slot = g_hash_table_lookup(config->slots, "appfs.1");
 	g_assert_cmpstr(slot->name, ==, "appfs.1");
 	g_assert_cmpstr(slot->description, ==, "Application filesystem partition 1");
+	g_assert_cmpstr(slot->device, ==, "/dev/appfs-1");
 	g_assert_null(slot->bootname);
 	g_assert_cmpstr(slot->type, ==, "ext4");
 
@@ -968,8 +969,6 @@ static void config_file_extra_mkfs_opts(ConfigFileFixture *fixture,
 [system]\n\
 compatible=FooCorp Super BarBazzer\n\
 bootloader=barebox\n\
-mountprefix=/mnt/myrauc/\n\
-activate-installed=false\n\
 \n\
 [slot.rootfs.0]\n\
 device=/dev/null\n\

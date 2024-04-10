@@ -87,10 +87,11 @@ G_GNUC_WARN_UNUSED_RESULT;
  */
 static inline void r_ptr_array_addv(GPtrArray *ptrarray, gchar **argvp, gboolean copy)
 {
-	if (argvp != NULL) {
-		for (gchar **addarg = argvp; *addarg != NULL; addarg++) {
-			g_ptr_array_add(ptrarray, copy ? g_strdup(*addarg) : *addarg);
-		}
+	if (argvp == NULL)
+		return;
+
+	for (gchar **addarg = argvp; *addarg != NULL; addarg++) {
+		g_ptr_array_add(ptrarray, copy ? g_strdup(*addarg) : *addarg);
 	}
 }
 
